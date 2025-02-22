@@ -261,11 +261,16 @@ body {
     align-items: center;
     gap: 4rem;
     min-height: 100vh;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .hero-image {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
     border-radius: 20px;
     border: 2px solid var(--primary-color);
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
@@ -282,6 +287,8 @@ body {
 .terminal {
     width: 100%;
     max-width: 700px;
+    min-width: 300px;
+    flex: 1;
     background: var(--terminal-bg);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
