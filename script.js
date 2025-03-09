@@ -210,5 +210,11 @@ function highlightActiveSection() {
     });
 }
 
+// Initialize active section highlighting on page load
+window.addEventListener('load', () => {
+    highlightActiveSection();
+    // Add a small delay to ensure all elements are properly loaded
+    setTimeout(highlightActiveSection, 500);
+});
+
 window.addEventListener('scroll', highlightActiveSection);
-window.addEventListener('load', highlightActiveSection);

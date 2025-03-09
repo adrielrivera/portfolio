@@ -683,3 +683,36 @@ body {
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
     border-color: #00ff00;
 }
+
+/* Section Icons */
+.skill-card i.fa-certificate,
+.skill-card i.fa-shield-alt,
+.skill-card i.fa-user-secret {
+    color: #00cc00;
+}
+
+.skill-card i.fa-flag,
+.skill-card i.fa-laptop-code,
+.skill-card i.fa-trophy {
+    color: #00dd00;
+}
+
+.skill-card i.fa-project-diagram,
+.skill-card i.fa-code-branch,
+.skill-card i.fa-terminal {
+    color: #00ee00;
+}
+
+/* Section Hover Effects */
+.skill-card:hover i.fa-certificate,
+.skill-card:hover i.fa-shield-alt,
+.skill-card:hover i.fa-user-secret,
+.skill-card:hover i.fa-flag,
+.skill-card:hover i.fa-laptop-code,
+.skill-card:hover i.fa-trophy,
+.skill-card:hover i.fa-project-diagram,
+.skill-card:hover i.fa-code-branch,
+.skill-card:hover i.fa-terminal {
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
