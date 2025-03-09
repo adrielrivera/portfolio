@@ -7,6 +7,7 @@
     height: 100vh;
     width: 220px;
     background: rgba(0, 0, 0, 0.92);
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     z-index: 1000;
     border-right: 1px solid rgba(0, 255, 0, 0.3);
@@ -15,6 +16,21 @@
     flex-direction: column;
     padding: 2rem 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Firefox-specific styles */
+@-moz-document url-prefix() {
+    .sidebar {
+        background: rgba(0, 0, 0, 0.95); /* Darker background for Firefox since it doesn't support backdrop-filter */
+    }
+    
+    .mobile-nav {
+        background: rgba(0, 0, 0, 0.95);
+    }
+    
+    .terminal {
+        background: rgba(0, 0, 0, 0.95);
+    }
 }
 
 .sidebar:hover {
@@ -153,6 +169,7 @@
     width: 100%;
     padding: 1rem 2rem;
     background: rgba(0, 0, 0, 0.95);
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 255, 0, 0.3);
@@ -254,6 +271,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -262,6 +281,10 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    min-height: 100vh;
+    /* Ensure proper rendering in Firefox */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Matrix Background */
@@ -274,6 +297,32 @@ body {
     z-index: -1;
     opacity: 0.35;
     background: radial-gradient(circle at center, rgba(0, 80, 0, 0.95), rgba(0, 0, 0, 0.98));
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+}
+
+/* Fix for Firefox animation performance */
+@-moz-document url-prefix() {
+    .matrix-bg canvas {
+        opacity: 0.8;
+    }
+    
+    @keyframes glitch-1 {
+        0% { clip-path: inset(40% 0 61% 0); }
+        20% { clip-path: inset(92% 0 1% 0); }
+        40% { clip-path: inset(43% 0 1% 0); }
+        60% { clip-path: inset(25% 0 58% 0); }
+        80% { clip-path: inset(54% 0 7% 0); }
+        100% { clip-path: inset(58% 0 43% 0); }
+    }
+
+    @keyframes glitch-2 {
+        0% { clip-path: inset(25% 0 58% 0); }
+        20% { clip-path: inset(54% 0 7% 0); }
+        40% { clip-path: inset(58% 0 43% 0); }
+        60% { clip-path: inset(40% 0 61% 0); }
+        80% { clip-path: inset(92% 0 1% 0); }
+        100% { clip-path: inset(43% 0 1% 0); }
+    }
 }
 
 /* Section Styling */
@@ -415,24 +464,6 @@ body {
     50% { opacity: 0; }
 }
 
-@keyframes glitch-1 {
-    0% { clip-path: inset(20% 0 30% 0); }
-    20% { clip-path: inset(60% 0 1% 0); }
-    40% { clip-path: inset(25% 0 58% 0); }
-    60% { clip-path: inset(54% 0 7% 0); }
-    80% { clip-path: inset(63% 0 17% 0); }
-    100% { clip-path: inset(34% 0 43% 0); }
-}
-
-@keyframes glitch-2 {
-    0% { clip-path: inset(25% 0 58% 0); }
-    20% { clip-path: inset(54% 0 7% 0); }
-    40% { clip-path: inset(63% 0 17% 0); }
-    60% { clip-path: inset(34% 0 43% 0); }
-    80% { clip-path: inset(20% 0 30% 0); }
-    100% { clip-path: inset(60% 0 1% 0); }
-}
-
 /* Terminal Section */
 .terminal-section {
     min-height: 100vh;
@@ -488,13 +519,14 @@ body {
 
 .terminal {
     width: 100%;
-    max-width: 700px;
-    min-width: 300px;
-    flex: 1;
-    background: var(--terminal-bg);
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
     overflow: hidden;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
 }
 
 .terminal-header {

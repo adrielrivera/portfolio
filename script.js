@@ -10,10 +10,19 @@ class MatrixBackground {
         this.canvas.style.height = '100%';
         this.canvas.style.zIndex = '-1';
         this.canvas.style.opacity = '0.7';
+        
+        // Check if Firefox
+        this.isFirefox = typeof InstallTrigger !== 'undefined';
+        if (this.isFirefox) {
+            this.canvas.style.opacity = '0.5'; // Lower opacity for Firefox
+            this.fontSize = 12; // Smaller font size for better performance
+        } else {
+            this.fontSize = 14;
+        }
+        
         document.querySelector('.matrix-bg').appendChild(this.canvas);
 
         this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
-        this.fontSize = 14;
         this.columns = 0;
         this.drops = [];
 
@@ -30,7 +39,10 @@ class MatrixBackground {
     }
 
     animate() {
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.03)';
+        // Adjust animation for Firefox
+        const alphaValue = this.isFirefox ? 0.05 : 0.03;
+        
+        this.ctx.fillStyle = `rgba(0, 0, 0, ${alphaValue})`;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.fillStyle = '#00ff00';
         this.ctx.font = `${this.fontSize}px monospace`;
@@ -38,7 +50,11 @@ class MatrixBackground {
         for (let i = 0; i < this.drops.length; i++) {
             const text = this.characters[Math.floor(Math.random() * this.characters.length)];
             this.ctx.fillText(text, i * this.fontSize, this.drops[i] * this.fontSize);
-            if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.985) {
+            
+            // Adjust drop rate for Firefox
+            const randomFactor = this.isFirefox ? 0.975 : 0.985;
+            
+            if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > randomFactor) {
                 this.drops[i] = 0;
             }
             this.drops[i]++;
