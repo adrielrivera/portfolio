@@ -138,3 +138,61 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.section-dark, .skill-card').forEach(element => {
     observer.observe(element);
 });
+
+// Mobile Navigation Toggle
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const sidebar = document.querySelector('.sidebar');
+
+if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        hamburgerMenu.classList.toggle('active');
+    });
+}
+
+// Close sidebar when clicking on a link (mobile)
+document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+            sidebar.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+        }
+    });
+});
+
+// Close sidebar when clicking outside (mobile)
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 992 && 
+        !e.target.closest('.sidebar') && 
+        !e.target.closest('.hamburger-menu') && 
+        sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        hamburgerMenu.classList.remove('active');
+    }
+});
+
+// Highlight active section in sidebar
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+
+function highlightActiveSection() {
+    const scrollPosition = window.scrollY;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightActiveSection);
+window.addEventListener('load', highlightActiveSection);
