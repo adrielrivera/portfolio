@@ -125,10 +125,14 @@ window.addEventListener('load', () => {
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const hrefAttribute = this.getAttribute('href');
+        // Only prevent default if it's a true hash link for the current page
+        if (hrefAttribute.startsWith('#') && document.querySelector(hrefAttribute)) {
+            e.preventDefault();
+            document.querySelector(hrefAttribute).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -157,21 +161,25 @@ document.querySelectorAll('.section-dark, .skill-card').forEach(element => {
 
 // Mobile Navigation Toggle
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-const sidebar = document.querySelector('.sidebar');
+// const sidebar = document.querySelector('.sidebar'); // Old sidebar
+const topNavLinks = document.querySelector('.top-navbar .nav-links'); // New nav links container
 
-if (hamburgerMenu) {
+if (hamburgerMenu && topNavLinks) { // Check if both hamburger and new nav links exist
     hamburgerMenu.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
+        // sidebar.classList.toggle('active'); // Old sidebar toggle
+        topNavLinks.classList.toggle('active'); // Toggle active on new nav links for mobile
         hamburgerMenu.classList.toggle('active');
     });
 }
 
 // Close sidebar when clicking on a link (mobile)
-document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
+// document.querySelectorAll('.sidebar nav ul li a').forEach(link => { // Old selector
+document.querySelectorAll('.top-navbar .nav-links a').forEach(link => { // New selector for top nav links
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 992) {
-            sidebar.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
+        if (window.innerWidth <= 992 && topNavLinks && topNavLinks.classList.contains('active')) { // Check new nav links
+            // sidebar.classList.remove('active'); // Old sidebar
+            topNavLinks.classList.remove('active'); // Hide new nav links
+            if (hamburgerMenu) hamburgerMenu.classList.remove('active');
         }
     });
 });
@@ -179,42 +187,77 @@ document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
 // Close sidebar when clicking outside (mobile)
 document.addEventListener('click', (e) => {
     if (window.innerWidth <= 992 && 
-        !e.target.closest('.sidebar') && 
-        !e.target.closest('.hamburger-menu') && 
-        sidebar.classList.contains('active')) {
-        sidebar.classList.remove('active');
-        hamburgerMenu.classList.remove('active');
+        topNavLinks && topNavLinks.classList.contains('active') && // Check new nav links
+        !e.target.closest('.top-navbar .nav-links') && // Clicked outside new nav links
+        !e.target.closest('.hamburger-menu') ) { // Clicked outside hamburger
+        // sidebar.classList.remove('active'); // Old sidebar
+        topNavLinks.classList.remove('active'); // Hide new nav links
+        if (hamburgerMenu) hamburgerMenu.classList.remove('active');
     }
 });
 
-// Highlight active section in sidebar
+// Highlight active section in navigation based on current page URL
+const navLinks = document.querySelectorAll('.top-navbar .nav-links a.nav-button');
+const currentPage = window.location.pathname.split('/').pop(); // Gets the current HTML file name
+
+function highlightActivePage() {
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkPage = link.getAttribute('href').split('/').pop();
+
+        // Handle index.html as the default/home page
+        if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
+            link.classList.add('active');
+        } else if (linkPage === currentPage && currentPage !== 'index.html') {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Initialize active page highlighting on page load
+window.addEventListener('load', () => {
+    // new TerminalAnimation(); // Already initialized earlier
+    // new MatrixBackground(); // Already initialized earlier
+    highlightActivePage();
+    // Add a small delay to ensure all elements are properly loaded if needed for other scripts
+    // setTimeout(highlightActivePage, 100); // Usually not needed for this kind of highlighting
+});
+
+// Remove old scroll-based highlighting logic
+/*
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+// const navLinks = document.querySelectorAll('.sidebar nav ul li a'); // Old nav links
+// const navLinks = document.querySelectorAll('.top-navbar .nav-links a.nav-button'); // New nav buttons
 
 function highlightActiveSection() {
     const scrollPosition = window.scrollY;
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 100; // Adjusted for fixed navbar height
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            // Check href for section ID. For index.html, hero section is home.
+            const linkHref = link.getAttribute('href');
+            if (linkHref === `#${sectionId}` || (sectionId === 'hero' && linkHref === 'index.html')) {
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     link.classList.add('active');
                 }
-            });
-        }
+            }
+        });
     });
 }
 
 // Initialize active section highlighting on page load
 window.addEventListener('load', () => {
+    // new TerminalAnimation(); // Ensure these are called, or manage initialization order
+    // new MatrixBackground();
     highlightActiveSection();
     // Add a small delay to ensure all elements are properly loaded
     setTimeout(highlightActiveSection, 500);
 });
 
 window.addEventListener('scroll', highlightActiveSection);
+*/

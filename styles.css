@@ -1,5 +1,6 @@
 /* Base styles */
 /* Sidebar Styles */
+/*
 .sidebar {
     position: fixed;
     top: 0;
@@ -18,10 +19,9 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Firefox-specific styles */
 @-moz-document url-prefix() {
     .sidebar {
-        background: rgba(0, 0, 0, 0.95); /* Darker background for Firefox since it doesn't support backdrop-filter */
+        background: rgba(0, 0, 0, 0.95); 
     }
     
     .mobile-nav {
@@ -139,7 +139,6 @@
     color: var(--primary-color);
 }
 
-/* Social icons at bottom of sidebar */
 .sidebar-footer {
     padding: 1.2rem 1.5rem;
     border-top: 1px solid rgba(0, 255, 0, 0.1);
@@ -159,35 +158,100 @@
     color: var(--primary-color);
     transform: translateY(-3px);
 }
+*/
 
-/* Mobile Navigation */
-.mobile-nav {
-    display: none;
+/* Top Navigation Bar Styles */
+.top-navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.95);
+    top: 20px; /* Adjust as needed for spacing from top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; /* Adjusts to content width */
+    max-width: 90%; /* Ensure it doesn't get too wide on large screens */
+    padding: 0.75rem 1.5rem; /* Vertical and horizontal padding */
+    background: rgba(0, 0, 0, 0.85);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+    border-radius: 50px; /* Large oval shape */
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
 }
 
-.mobile-nav .logo {
+.top-navbar:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 0, 0.35);
+    border-color: rgba(0, 255, 0, 0.5);
+}
+
+.nav-logo {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+    margin-right: 1rem; /* Space between logo and links */
 }
 
-.hamburger-menu {
+.nav-links {
     display: flex;
+    list-style: none;
+    gap: 0.5rem; /* Reduced gap for smaller buttons */
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-button {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem; /* Slightly smaller font for buttons */
+    padding: 0.5rem 1rem; /* Padding for the button shape */
+    border: 1px solid transparent;
+    border-radius: 25px; /* Oval shape for buttons */
+    transition: all 0.3s ease;
+    background-color: rgba(0, 255, 0, 0.1); /* Subtle background */
+    letter-spacing: 0.3px;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    color: var(--bg-color); /* Dark text on hover/active */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.nav-social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem; /* Space between nav links and social icons */
+}
+
+.nav-social-links a {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px) scale(1.1);
+}
+
+
+/* Mobile Navigation - reuse hamburger styles */
+.hamburger-menu {
+    display: none; /* Hidden by default, shown in media query */
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
@@ -211,7 +275,6 @@
     align-self: flex-end;
 }
 
-/* Hamburger Menu Animation */
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
     width: 100%;
@@ -236,31 +299,91 @@
 
 /* Main Content Adjustment */
 .main-content {
-    margin-left: 220px;
-    transition: margin 0.3s ease;
+    /* margin-left: 220px; */ /* Removed old sidebar margin */
+    padding-top: 100px; /* Add padding for the new fixed top navbar, adjust as needed */
+    transition: margin 0.3s ease, padding-top 0.3s ease;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .sidebar {
+    /* .sidebar {
         transform: translateX(-100%);
         width: 220px;
     }
     
     .sidebar.active {
         transform: translateX(0);
+    } */
+    
+    .top-navbar {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between;
+        top: 10px; /* Closer to top on mobile */
+        padding: 0.5rem 1rem;
+        border-radius: 30px; /* Slightly less rounded on mobile if needed */
+    }
+
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: calc(100% + 5px); /* Position below the navbar */
+        left: 0;
+        border-radius: 15px;
+        padding: 1rem 0;
+        border: 1px solid rgba(0, 255, 0, 0.2);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when hamburger is active */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-button {
+        display: block;
+        padding: 0.8rem 1rem;
+        margin: 0.3rem 0;
+        background-color: transparent; /* Buttons are full width, style differently */
+        border: none;
+        border-radius: 0;
+    }
+    .nav-button:hover,
+    .nav-button.active {
+        background-color: rgba(0, 255, 0, 0.15);
+        color: var(--primary-color);
+        transform: none; /* No vertical transform on mobile for full-width buttons */
     }
     
-    .mobile-nav {
-        display: flex;
+    .nav-social-links {
+        /* Decide if social links are in hamburger or visible */
+        /* Option 1: Keep them visible next to hamburger */
+         margin-left: 0; 
+        /* Option 2: Move them into the .nav-links dropdown */
+        /* display: none; */ /* if moved to dropdown */
+    }
+    
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu */
     }
     
     .main-content {
         margin-left: 0;
+        padding-top: 80px; /* Adjust if navbar height changes */
     }
     
     .terminal-section {
-        padding-top: 8rem; /* Add extra padding for mobile nav */
+        padding-top: 2rem; /* Adjusted from 8rem to account for new navbar */
         gap: 2rem;
     }
     
