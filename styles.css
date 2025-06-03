@@ -903,6 +903,26 @@ body {
     color: #d0d0d0;
 }
 
+/* Styling for the merged About section on the Home page */
+.about-section-on-home .about-narrative {
+    max-width: 800px; /* Or your preferred width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem; /* Add some internal padding if not already handled by .section-dark */
+}
+
+.about-section-on-home .about-narrative p {
+    font-size: 1rem; /* Slightly larger for narrative */
+    line-height: 1.9; /* Increased line height for better readability */
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+    text-align: justify; /* Justify text for a more formal look, consider browser support/hyphenation */
+    color: #e0e0e0; /* Ensuring consistent text color */
+}
+
+.about-section-on-home .about-narrative p:last-child {
+    margin-bottom: 0; /* No extra margin for the last paragraph */
+}
+
 .about-image {
     width: 100%;
     max-width: 300px;

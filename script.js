@@ -116,25 +116,49 @@ class TerminalAnimation {
     }
 }
 
-// Initialize Terminal Animation
+// Initialize animations and other on-load functionalities
 window.addEventListener('load', () => {
-    new TerminalAnimation();
-    new MatrixBackground();
+    // Initialize Matrix Background if its container exists
+    if (document.querySelector('.matrix-bg')) {
+        new MatrixBackground();
+    }
+
+    // Initialize Terminal Animation if its container and elements exist
+    if (document.querySelector('.typing-text .line')) { // More specific check
+        new TerminalAnimation();
+    }
+
+    // Highlight active page in navigation
+    highlightActivePage();
 });
 
 // Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const hrefAttribute = this.getAttribute('href');
-        // Only prevent default if it's a true hash link for the current page
-        if (hrefAttribute.startsWith('#') && document.querySelector(hrefAttribute)) {
-            e.preventDefault();
-            document.querySelector(hrefAttribute).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        const targetPage = hrefAttribute.split('#')[0];
+        const targetId = hrefAttribute.split('#')[1];
+
+        // If it's a link to a section on the *current* page
+        if ((!targetPage || targetPage === currentPage || (targetPage === 'index.html' && (currentPage === '' || currentPage === 'index.html'))) && targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Optionally, update hash manually if not already done by browser on same page
+                // window.location.hash = '#' + targetId;
+            }
+        } 
+        // If it's a link to a section on another page (e.g., index.html#about from projects.html),
+        // the default browser navigation will handle going to the page and then to the hash.
+        // The highlightActivePage function will handle the active state on page load.
     });
 });
+
+// Re-run highlighting if hash changes on the same page (e.g., clicking internal #links on index.html)
+window.addEventListener('hashchange', highlightActivePage);
 
 // Intersection Observer for Section and Card Animations
 const observerOptions = {
@@ -199,65 +223,42 @@ document.addEventListener('click', (e) => {
 // Highlight active section in navigation based on current page URL
 const navLinks = document.querySelectorAll('.top-navbar .nav-links a.nav-button');
 const currentPage = window.location.pathname.split('/').pop(); // Gets the current HTML file name
+const currentHash = window.location.hash; // Gets the current URL hash (e.g., #about)
 
 function highlightActivePage() {
     navLinks.forEach(link => {
         link.classList.remove('active');
-        const linkPage = link.getAttribute('href').split('/').pop();
+        const linkHref = link.getAttribute('href');
+        const linkPage = linkHref.split('/').pop().split('#')[0];
+        // const linkHash = linkHref.includes('#') ? '#' + linkHref.split('#')[1] : ''; // No longer needed for 'About' hash
 
-        // Handle index.html as the default/home page
-        if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
-            link.classList.add('active');
-        } else if (linkPage === currentPage && currentPage !== 'index.html') {
-            link.classList.add('active');
-        }
-    });
-}
+        const normalizedCurrentPage = (currentPage === '' || currentPage === 'index.html') ? 'index.html' : currentPage;
+        const normalizedLinkPage = (linkPage === '' || linkPage === 'index.html') ? 'index.html' : linkPage;
 
-// Initialize active page highlighting on page load
-window.addEventListener('load', () => {
-    // new TerminalAnimation(); // Already initialized earlier
-    // new MatrixBackground(); // Already initialized earlier
-    highlightActivePage();
-    // Add a small delay to ensure all elements are properly loaded if needed for other scripts
-    // setTimeout(highlightActivePage, 100); // Usually not needed for this kind of highlighting
-});
-
-// Remove old scroll-based highlighting logic
-/*
-const sections = document.querySelectorAll('section[id]');
-// const navLinks = document.querySelectorAll('.sidebar nav ul li a'); // Old nav links
-// const navLinks = document.querySelectorAll('.top-navbar .nav-links a.nav-button'); // New nav buttons
-
-function highlightActiveSection() {
-    const scrollPosition = window.scrollY;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // Adjusted for fixed navbar height
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            // Check href for section ID. For index.html, hero section is home.
-            const linkHref = link.getAttribute('href');
-            if (linkHref === `#${sectionId}` || (sectionId === 'hero' && linkHref === 'index.html')) {
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        if (normalizedCurrentPage === normalizedLinkPage) {
+            // If it's the index page, and the link is also for index.html (our Home button), make it active.
+            // Or if it's any other page and the link matches.
+            if (normalizedLinkPage === 'index.html') {
+                 // Only highlight if the link is purely to index.html (Home button)
+                if (!linkHref.includes('#')) { // Check if it is the home link itself, not an internal hash
                     link.classList.add('active');
                 }
+            } else {
+                 link.classList.add('active'); // For other pages like certifications.html, etc.
             }
-        });
+        }
     });
+
+    // Special case for index.html: if no specific section is targeted by hash, ensure Home is active.
+    // Or if the hash is #hero (or similar if you add more top-level sections to index.html).
+    if (normalizedCurrentPage === 'index.html') {
+        const homeLink = document.querySelector('.nav-links a[href="index.html"]');
+        if (homeLink && (currentHash === '' || currentHash === '#hero' || !currentHash)) {
+            // Deactivate others first for safety, though already done above.
+            navLinks.forEach(l => l.classList.remove('active')); 
+            homeLink.classList.add('active');
+        }
+        // If currentHash is #about, nothing should be active from the main nav as the link is gone.
+        // The content is just there.
+    }
 }
-
-// Initialize active section highlighting on page load
-window.addEventListener('load', () => {
-    // new TerminalAnimation(); // Ensure these are called, or manage initialization order
-    // new MatrixBackground();
-    highlightActiveSection();
-    // Add a small delay to ensure all elements are properly loaded
-    setTimeout(highlightActiveSection, 500);
-});
-
-window.addEventListener('scroll', highlightActiveSection);
-*/
