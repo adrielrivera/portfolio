@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="dark">
+    <title>Ransomware Simulator | Adriel Rivera Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <base href="./">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <nav class="top-navbar">
+        <div class="nav-logo">Adriel</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-button">Home</a></li>
+            <li><a href="certifications.html" class="nav-button">Certifications</a></li>
+            <li><a href="competitions.html" class="nav-button">Competitions</a></li>
+            <li><a href="projects.html" class="nav-button">Projects</a></li>
+        </ul>
+        <div class="nav-social-links">
+            <a href="https://github.com/adrielrivera" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/adriel-rivera" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:adrielrivera103@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <main class="main-content project-detail">
+        <!-- Project Header -->
+        <section class="project-header">
+            <div class="project-title">
+                <h1 class="glitch-text">Ransomware Simulator</h1>
+                <div class="project-subtitle">Educational Cybersecurity Research Project</div>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/adrielrivera/malware-simulations" target="_blank" class="btn-primary">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#demo-video" class="btn-secondary">
+                    <i class="fas fa-play"></i> Watch Demo
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section-dark project-overview">
+            <h2><i class="fas fa-info-circle"></i> Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Role</h3>
+                    <p>Developer & Security Researcher</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">cryptography</span>
+                        <span class="tech-tag">tkinter</span>
+                        <span class="tech-tag">Pillow</span>
+                        <span class="tech-tag">tqdm</span>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <h3>Project Type</h3>
+                    <p>Educational Security Research</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Highlights -->
+        <section class="section-dark project-highlights">
+            <h2><i class="fas fa-star"></i> Project Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe & Controlled</h3>
+                    <p>Built a safe, controlled ransomware simulation for educational purposes</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Industry-Standard Encryption</h3>
+                    <p>Implemented AES-256 encryption with secure key management</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Robust Safety Mechanisms</h3>
+                    <p>Developed multiple layers of safety to prevent accidental system damage</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-unlock"></i>
+                    <h3>Intuitive Decryption Tool</h3>
+                    <p>Created an intuitive decryption tool with progress tracking</p>
+                </div>
+                <div class="highlight-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Comprehensive Documentation</h3>
+                    <p>Documented comprehensive threat modelling and mitigation strategies</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation -->
+        <section class="section-dark technical-implementation">
+            <h2><i class="fas fa-cogs"></i> Technical Implementation</h2>
+            
+            <div class="implementation-section">
+                <h3><i class="fas fa-shield-virus"></i> Security Measures</h3>
+                <div class="code-block">
+                    <pre><code># Example from SafetyChecks class
+ALLOWED_EXTENSIONS = {'.txt', '.docx', '.jpg', '.png', '.test'}
+FORBIDDEN_PATHS = {
+    'windows', 'program files', 'system32', 'users',
+    'documents', 'desktop', 'downloads', 'pictures'
+}</code></pre>
+                </div>
+                <p>Implemented multiple layers of safety checks including file extension validation, path restrictions, and user confirmation requirements to ensure the simulator operates only on designated test files.</p>
+            </div>
+
+            <div class="implementation-section">
+                <h3><i class="fas fa-key"></i> Encryption Implementation</h3>
+                <div class="code-block">
+                    <pre><code># Industry-standard encryption libraries
+from cryptography.fernet import Fernet
+from cryptography.hazmat.primitives import hashes</code></pre>
+                </div>
+                <p>Utilised industry-standard cryptographic libraries for secure encryption implementation, ensuring proper key generation, storage, and retrieval mechanisms.</p>
+            </div>
+        </section>
+
+        <!-- Technical Challenges -->
+        <section class="section-dark challenges">
+            <h2><i class="fas fa-mountain"></i> Technical Challenges Overcome</h2>
+            <div class="challenges-grid">
+                <div class="challenge-item">
+                    <i class="fas fa-file-code"></i>
+                    <h3>Safe File Operations</h3>
+                    <p>Implemented comprehensive file validation and path checking to ensure operations only occur on designated test files, preventing accidental system damage.</p>
+                </div>
+                <div class="challenge-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>Ensuring Reversibility</h3>
+                    <p>Designed secure key storage and retrieval mechanisms to guarantee complete reversibility of all encryption operations.</p>
+                </div>
+                <div class="challenge-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Progress Tracking</h3>
+                    <p>Built user-friendly progress indicators with real-time updates to provide clear feedback during encryption and decryption processes.</p>
+                </div>
+                <div class="challenge-item">
+                    <i class="fas fa-check-double"></i>
+                    <h3>Comprehensive Safety Checks</h3>
+                    <p>Created multi-layered validation systems including file type checks, path restrictions, and user confirmation prompts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Video -->
+        <section id="demo-video" class="section-dark demo-section">
+            <h2><i class="fas fa-play-circle"></i> Live Demonstration</h2>
+            <div class="video-container">
+                <video controls poster="./videos/ransomware-demo-thumbnail.jpg">
+                    <source src="./videos/liltecca.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-description">Watch the ransomware simulator in action, demonstrating the encryption and decryption processes with built-in safety measures.</p>
+        </section>
+
+        <!-- Security Considerations -->
+        <section class="section-dark security-considerations">
+            <h2><i class="fas fa-user-shield"></i> Security Considerations</h2>
+            <div class="security-grid">
+                <div class="security-item">
+                    <i class="fas fa-route"></i>
+                    <h3>Path Validation</h3>
+                    <p>Strict path checking to ensure operations only occur within designated test directories</p>
+                </div>
+                <div class="security-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>File Type Restrictions</h3>
+                    <p>Limited file extensions to prevent accidental encryption of critical system files</p>
+                </div>
+                <div class="security-item">
+                    <i class="fas fa-desktop"></i>
+                    <h3>System Protection</h3>
+                    <p>Multiple safeguards to prevent any interaction with system-critical directories</p>
+                </div>
+                <div class="security-item">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>User Confirmation</h3>
+                    <p>Required user acknowledgement and confirmation before any encryption operations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details Table -->
+        <section class="section-dark technical-details">
+            <h2><i class="fas fa-table"></i> Technical Specifications</h2>
+            <div class="details-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Technology/Implementation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Language</td>
+                            <td>Python 3.8+</td>
+                        </tr>
+                        <tr>
+                            <td>Encryption</td>
+                            <td>AES-256 (via cryptography library)</td>
+                        </tr>
+                        <tr>
+                            <td>UI Framework</td>
+                            <td>tkinter</td>
+                        </tr>
+                        <tr>
+                            <td>Progress Tracking</td>
+                            <td>tqdm</td>
+                        </tr>
+                        <tr>
+                            <td>Image Handling</td>
+                            <td>Pillow</td>
+                        </tr>
+                        <tr>
+                            <td>Key Management</td>
+                            <td>Fernet symmetric encryption</td>
+                        </tr>
+                        <tr>
+                            <td>Safety Measures</td>
+                            <td>Multi-layer path and file validation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Learning Outcomes -->
+        <section class="section-dark learning-outcomes">
+            <h2><i class="fas fa-graduation-cap"></i> Learning Outcomes & Skills Demonstrated</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cryptography Implementation</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-file-code"></i>
+                    <h3>Secure File Operations</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-desktop"></i>
+                    <h3>User Interface Design</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Best Practices</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Technical Documentation</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>Threat Modelling</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Quality -->
+        <section class="section-dark code-quality">
+            <h2><i class="fas fa-code"></i> Code Quality & Best Practices</h2>
+            <div class="quality-items">
+                <div class="quality-item">
+                    <i class="fas fa-tags"></i>
+                    <h3>Type Hints Usage</h3>
+                    <p>Comprehensive type annotations for improved code clarity and IDE support</p>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error Handling</h3>
+                    <p>Robust exception handling with user-friendly error messages and graceful degradation</p>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Logging Implementation</h3>
+                    <p>Detailed logging for debugging and audit trails of all operations</p>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Clear Documentation</h3>
+                    <p>Comprehensive docstrings and inline comments explaining complex operations</p>
+                </div>
+                <div class="quality-item">
+                    <i class="fas fa-shield-check"></i>
+                    <h3>Safety-First Approach</h3>
+                    <p>Security considerations integrated into every aspect of the design and implementation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Improvements -->
+        <section class="section-dark future-improvements">
+            <h2><i class="fas fa-rocket"></i> Future Enhancements</h2>
+            <div class="improvements-grid">
+                <div class="improvement-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>GUI Improvements</h3>
+                    <p>Enhanced user interface with modern styling and improved user experience</p>
+                </div>
+                <div class="improvement-item">
+                    <i class="fas fa-file-archive"></i>
+                    <h3>Additional File Format Support</h3>
+                    <p>Extended support for more file types whilst maintaining security boundaries</p>
+                </div>
+                <div class="improvement-item">
+                    <i class="fas fa-list-alt"></i>
+                    <h3>Enhanced Logging</h3>
+                    <p>More detailed logging capabilities with structured log formats and analysis tools</p>
+                </div>
+                <div class="improvement-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Detailed Progress Tracking</h3>
+                    <p>More granular progress indicators with estimated completion times and statistics</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Results -->
+        <section class="section-dark impact">
+            <h2><i class="fas fa-chart-pie"></i> Impact & Results</h2>
+            <div class="impact-content">
+                <div class="impact-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Value</h3>
+                    <p>Provides hands-on experience with ransomware mechanics in a safe, controlled environment, enhancing understanding of cybersecurity threats and defensive measures.</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Security Awareness</h3>
+                    <p>Demonstrates the importance of backup strategies, security protocols, and threat awareness in organisational cybersecurity frameworks.</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Technical Implementation</h3>
+                    <p>Showcases practical application of cryptographic principles, secure coding practices, and safety-first development methodologies.</p>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Safety Measures Effectiveness</h3>
+                    <p>Validates the effectiveness of multi-layered security controls in preventing accidental system compromise whilst maintaining functional capabilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section class="section-dark takeaways">
+            <h2><i class="fas fa-key"></i> Key Takeaways</h2>
+            <div class="takeaways-content">
+                <p>This project demonstrates proficiency in advanced Python programming, cryptographic implementation, and security-first development practices. The emphasis on safety mechanisms and comprehensive documentation reflects a mature approach to cybersecurity research and development.</p>
+                
+                <div class="takeaway-highlights">
+                    <div class="takeaway">
+                        <i class="fas fa-python"></i>
+                        <span>Advanced Python Programming</span>
+                    </div>
+                    <div class="takeaway">
+                        <i class="fas fa-lock"></i>
+                        <span>Cryptography Implementation</span>
+                    </div>
+                    <div class="takeaway">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security-First Development</span>
+                    </div>
+                    <div class="takeaway">
+                        <i class="fas fa-book"></i>
+                        <span>Documentation Practices</span>
+                    </div>
+                    <div class="takeaway">
+                        <i class="fas fa-desktop"></i>
+                        <span>User Interface Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Links -->
+        <section class="section-dark project-links-section">
+            <h2><i class="fas fa-link"></i> Project Resources</h2>
+            <div class="links-grid">
+                <a href="https://github.com/adrielrivera/malware-simulations" target="_blank" class="link-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub Repository</h3>
+                    <p>Complete source code and documentation</p>
+                </a>
+                <a href="https://github.com/adrielrivera/malware-simulations/blob/main/README.md" target="_blank" class="link-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Documentation</h3>
+                    <p>Detailed setup and usage instructions</p>
+                </a>
+                <a href="#demo-video" class="link-card">
+                    <i class="fas fa-play"></i>
+                    <h3>Demo Video</h3>
+                    <p>Live demonstration of the simulator</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html> 
