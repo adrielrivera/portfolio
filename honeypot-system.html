@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="dark">
+    <title>Honeypot System | Adriel Rivera Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <base href="./">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <nav class="top-navbar">
+        <div class="nav-logo">Adriel</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-button">Home</a></li>
+            <li><a href="certifications.html" class="nav-button">Certifications</a></li>
+            <li><a href="competitions.html" class="nav-button">Competitions</a></li>
+            <li><a href="projects.html" class="nav-button">Projects</a></li>
+        </ul>
+        <div class="nav-social-links">
+            <a href="https://github.com/adrielrivera" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/adriel-rivera" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:adrielrivera103@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <main class="main-content project-detail">
+        <!-- Project Header -->
+        <section class="project-header">
+            <div class="project-title">
+                <h1 class="glitch-text">🛡️ Honeypot System</h1>
+                <div class="project-subtitle">Advanced Threat Detection & Analysis Laboratory</div>
+            </div>
+            <div class="project-links">
+                <a href="#screenshots" class="btn-secondary">
+                    <i class="fas fa-images"></i> View Screenshots
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section-dark project-overview">
+            <h2><i class="fas fa-bullseye"></i> 🧭 Overview</h2>
+            <div class="overview-description">
+                <p><strong>Goal:</strong> Build a realistic honeypot lab using <a href="https://github.com/telekom-security/tpotce" target="_blank" class="tech-link">T-Pot 24.04.1</a> to observe and analyse real-world cyber attack behaviour within a controlled VM environment.</p>
+            </div>
+            
+            <div class="environment-section">
+                <h3><i class="fas fa-server"></i> Environment Configuration</h3>
+                <div class="environment-grid">
+                    <div class="env-card">
+                        <i class="fab fa-ubuntu"></i>
+                        <h4>Operating System</h4>
+                        <p>Ubuntu Server 22.04<br>(VMware Workstation)</p>
+                    </div>
+                    <div class="env-card">
+                        <i class="fas fa-hive"></i>
+                        <h4>T-Pot Installation</h4>
+                        <p>All-in-One (Hive)<br>Version 24.04.1</p>
+                    </div>
+                    <div class="env-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>Network Configuration</h4>
+                        <p>Internal IP: 192.168.72.52<br>Bridged Mode (LAN Only)</p>
+                    </div>
+                    <div class="env-card">
+                        <i class="fab fa-windows"></i>
+                        <h4>Host System</h4>
+                        <p>Windows 11<br>Isolated Environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Details -->
+        <section class="section-dark setup-details">
+            <h2><i class="fas fa-cogs"></i> 🔧 Setup Details</h2>
+            <div class="details-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Details / Configuration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>T-Pot Version</strong></td>
+                            <td>24.04.1 (Hive)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom SSH Port</strong></td>
+                            <td>64295 (Cowrie)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Web UI Port</strong></td>
+                            <td>64297 (T-Pot Dashboard)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Containerisation</strong></td>
+                            <td>All honeypots and ELK stack run in Docker</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Honeypot Services</strong></td>
+                            <td>Cowrie, Wordpot, Honeytrap, Redis, etc.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monitoring Tools</strong></td>
+                            <td>Suricata, Kibana, Spiderfoot, Elasticvue</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section id="screenshots" class="section-dark screenshots-section">
+            <h2><i class="fas fa-camera"></i> 📸 Screenshots</h2>
+            <p class="section-note">💡 Screenshots will be added as the project progresses through different phases.</p>
+            
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <i class="fas fa-desktop"></i>
+                        <h4>T-Pot Welcome Page</h4>
+                        <p>Web UI at 192.168.72.52:64297</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <i class="fas fa-chart-area"></i>
+                        <h4>Kibana Dashboard</h4>
+                        <p>Honeypot attack visualisations and alerts</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <i class="fas fa-heartbeat"></i>
+                        <h4>System Status</h4>
+                        <p>Active container status monitoring</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <i class="fas fa-globe"></i>
+                        <h4>Attack Map</h4>
+                        <p>Spiderfoot geographical attack analysis</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <i class="fas fa-terminal"></i>
+                        <h4>Terminal Output</h4>
+                        <p>Nmap scans, Cowrie logs, Suricata alerts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulated Attacks -->
+        <section class="section-dark simulated-attacks">
+            <h2><i class="fas fa-bug"></i> 🧪 Simulated Attacks</h2>
+            <p class="attack-description">Simulated traffic was generated from the host machine to mimic external attacks and validate honeypot functionality.</p>
+            
+            <div class="tools-section">
+                <h3><i class="fas fa-tools"></i> Tools Used</h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <i class="fas fa-search"></i>
+                        <h4>Network Reconnaissance</h4>
+                        <div class="code-block">
+                            <pre><code>nmap -sS -sV -p- 192.168.72.52</code></pre>
+                        </div>
+                        <p>Full TCP port scan for service discovery</p>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-key"></i>
+                        <h4>Brute Force Testing</h4>
+                        <div class="code-block">
+                            <pre><code>hydra [options] 192.168.72.52</code></pre>
+                        </div>
+                        <p>SSH brute-force against Cowrie honeypot [WIP]</p>
+                    </div>
+                    <div class="tool-item">
+                        <i class="fas fa-globe"></i>
+                        <h4>HTTP Probing</h4>
+                        <div class="code-block">
+                            <pre><code>curl http://192.168.72.52</code></pre>
+                        </div>
+                        <p>Simulate Wordpot HTTP probe activities</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <div class="result-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>✅ Result: Attack activities successfully triggered logs visible in the Kibana dashboard</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Findings -->
+        <section class="section-dark findings-section">
+            <h2><i class="fas fa-chart-pie"></i> 📊 Sample Findings</h2>
+            <p class="findings-note">These findings will be updated with real insights as data collection progresses.</p>
+            
+            <div class="findings-grid">
+                <div class="finding-item">
+                    <i class="fas fa-crosshairs"></i>
+                    <h3>Most Targeted Port</h3>
+                    <p><strong>22/tcp</strong> via Cowrie<br>SSH brute-force attempts</p>
+                </div>
+                <div class="finding-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Suricata Alert</h3>
+                    <p><strong>[ET INFO]</strong><br>Suspicious SSH Activity</p>
+                </div>
+                <div class="finding-item">
+                    <i class="fas fa-user-ninja"></i>
+                    <h3>Top Attacker IP</h3>
+                    <p><strong>123.45.67.89</strong><br>(Simulated traffic)</p>
+                </div>
+                <div class="finding-item">
+                    <i class="fas fa-bug"></i>
+                    <h3>Tool Detection</h3>
+                    <p><strong>BusyBox strings</strong><br>Base64 payload (Mirai botnet pattern)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Points -->
+        <section class="section-dark learning-section">
+            <h2><i class="fas fa-graduation-cap"></i> 🧠 Learning Points</h2>
+            <div class="learning-grid">
+                <div class="learning-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Attack Reconnaissance</h3>
+                    <p>Understood how attackers probe and brute-force SSH services in real-world scenarios</p>
+                </div>
+                <div class="learning-item">
+                    <i class="fas fa-link"></i>
+                    <h3>Attack Correlation</h3>
+                    <p>Learned how honeypots log and correlate multi-stage attacks across different services</p>
+                </div>
+                <div class="learning-item">
+                    <i class="fas fa-docker"></i>
+                    <h3>Container Monitoring</h3>
+                    <p>Practised container monitoring, alerting, and incident review in a Docker environment</p>
+                </div>
+                <div class="learning-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Blue Team Operations</h3>
+                    <p>Simulated Red Team activity within a Blue Team detection pipeline framework</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Work -->
+        <section class="section-dark future-work">
+            <h2><i class="fas fa-rocket"></i> 🛠 Future Work</h2>
+            <p class="future-note">This LAN-based setup represents the foundation for more advanced implementations.</p>
+            
+            <div class="roadmap-grid">
+                <div class="roadmap-item">
+                    <div class="status-badge todo">
+                        <i class="fas fa-square"></i>
+                        <span>TODO</span>
+                    </div>
+                    <h3>Internet Exposure</h3>
+                    <p>Expose VM to the Internet via port forwarding for real attack data collection</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="status-badge todo">
+                        <i class="fas fa-square"></i>
+                        <span>TODO</span>
+                    </div>
+                    <h3>Automated Analysis</h3>
+                    <p>Add automated log analysis scripts for pattern recognition and threat classification</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="status-badge todo">
+                        <i class="fas fa-square"></i>
+                        <span>TODO</span>
+                    </div>
+                    <h3>Threat Intelligence</h3>
+                    <p>Integrate with threat intelligence feeds for IOC correlation and enrichment</p>
+                </div>
+                <div class="roadmap-item">
+                    <div class="status-badge todo">
+                        <i class="fas fa-square"></i>
+                        <span>TODO</span>
+                    </div>
+                    <h3>Distributed Environment</h3>
+                    <p>Deploy honeypots across multiple VMs for a distributed monitoring environment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack -->
+        <section class="section-dark tech-stack">
+            <h2><i class="fas fa-layer-group"></i> Technology Stack</h2>
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <i class="fab fa-ubuntu"></i>
+                    <h3>Ubuntu Server</h3>
+                    <p>22.04 LTS</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fab fa-docker"></i>
+                    <h3>Docker</h3>
+                    <p>Containerised Services</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-chart-area"></i>
+                    <h3>ELK Stack</h3>
+                    <p>Elasticsearch, Logstash, Kibana</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>T-Pot</h3>
+                    <p>Multi-Honeypot Platform</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Suricata</h3>
+                    <p>Network IDS/IPS</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-spider"></i>
+                    <h3>Spiderfoot</h3>
+                    <p>OSINT Automation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Links -->
+        <section class="section-dark project-links-section">
+            <h2><i class="fas fa-link"></i> Project Resources</h2>
+            <div class="links-grid">
+                <a href="https://github.com/telekom-security/tpotce/blob/master/README.md" target="_blank" class="link-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Installation Guide</h3>
+                    <p>Comprehensive setup and configuration instructions</p>
+                </a>
+                <a href="#screenshots" class="link-card">
+                    <i class="fas fa-images"></i>
+                    <h3>Screenshots</h3>
+                    <p>Visual documentation of the honeypot setup</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html> 
