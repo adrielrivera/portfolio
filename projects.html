@@ -38,31 +38,60 @@
     <main class="main-content">
         <section id="projects" class="section-dark">
             <h2 class="glitch-text">Projects</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-search-location"></i>
-                    <h3>Automated OSINT Tool</h3>
-                    <p>Developed an automated tool for Open Source Intelligence gathering.</p>
+            
+            <!-- Top 3 Clickable Projects -->
+            <div class="clickable-projects-section">
+                <h3 class="clickable-indicator">
+                    <i class="fas fa-mouse-pointer"></i> Click me! - Interactive Project Details
+                </h3>
+                <div class="skills-grid">
+                    <a href="osint-tool.html" class="skill-card-link">
+                        <div class="skill-card clickable-project">
+                            <div class="click-badge">Click me!</div>
+                            <i class="fas fa-search-location"></i>
+                            <h3>Automated OSINT Tool</h3>
+                            <p>Developed an automated tool for Open Source Intelligence gathering with comprehensive web interface and mock data system.</p>
+                        </div>
+                    </a>
+                    <a href="ransomware-simulator.html" class="skill-card-link">
+                        <div class="skill-card clickable-project">
+                            <div class="click-badge">Click me!</div>
+                            <i class="fas fa-bug"></i>
+                            <h3>Ransomware Simulator</h3>
+                            <p>Built a simulator to study and understand ransomware behaviour in a controlled environment with detailed analysis capabilities.</p>
+                        </div>
+                    </a>
+                    <a href="honeypot-system.html" class="skill-card-link">
+                        <div class="skill-card clickable-project">
+                            <div class="click-badge">Click me!</div>
+                            <i class="fas fa-shield-virus"></i>
+                            <h3>Honeypot System</h3>
+                            <p>Designed and deployed a T-Pot honeypot system to detect and analyse real-world intrusion attempts with comprehensive logging.</p>
+                        </div>
+                    </a>
                 </div>
-                <a href="ransomware-simulator.html" class="skill-card-link">
+            </div>
+
+            <!-- Additional Projects (Non-clickable) -->
+            <div class="additional-projects-section">
+                <h3 class="section-subtitle">Additional Projects</h3>
+                <div class="skills-grid">
                     <div class="skill-card">
-                        <i class="fas fa-bug"></i>
-                        <h3>Ransomware Simulator</h3>
-                        <p>Built a simulator to study and understand ransomware behaviour in a controlled environment.</p>
+                        <i class="fas fa-utensils"></i>
+                        <h3>i-Makan App</h3>
+                        <p>Mobile application for food discovery and restaurant recommendations with user reviews and location-based services.</p>
                     </div>
-                </a>
-                <div class="skill-card">
-                    <i class="fas fa-user-secret"></i>
-                    <h3>Custom Remote Access Trojan (RAT)</h3>
-                    <p>Created a custom Remote Access Trojan for educational purposes in understanding system exploitation and control.</p>
+                    <div class="skill-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>i-Chope</h3>
+                        <p>Restaurant reservation system with real-time booking management and integrated payment processing capabilities.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>SICK Capstone Project</h3>
+                        <p>Industrial automation project focusing on sensor integration and data analytics for manufacturing process optimization.</p>
+                    </div>
                 </div>
-                <a href="honeypot-system.html" class="skill-card-link">
-                    <div class="skill-card">
-                        <i class="fas fa-shield-virus"></i>
-                        <h3>Honeypot System</h3>
-                        <p>Designed and deployed a honeypot to detect and analyse intrusion attempts.</p>
-                    </div>
-                </a>
             </div>
         </section>
     </main>

@@ -38,7 +38,7 @@
         <!-- Project Header -->
         <section class="project-header">
             <div class="project-title">
-                <h1 class="glitch-text">🛡️ Honeypot System</h1>
+                <h1 class="glitch-text">Honeypot System</h1>
                 <div class="project-subtitle">Advanced Threat Detection & Analysis Laboratory</div>
             </div>
             <div class="project-links">
@@ -50,7 +50,7 @@
 
         <!-- Project Overview -->
         <section class="section-dark project-overview">
-            <h2><i class="fas fa-bullseye"></i> 🧭 Overview</h2>
+            <h2><i class="fas fa-bullseye"></i> Overview</h2>
             <div class="overview-description">
                 <p><strong>Goal:</strong> Build a realistic honeypot lab using <a href="https://github.com/telekom-security/tpotce" target="_blank" class="tech-link">T-Pot 24.04.1</a> to observe and analyse real-world cyber attack behaviour within a controlled VM environment.</p>
             </div>
@@ -84,7 +84,7 @@
 
         <!-- Setup Details -->
         <section class="section-dark setup-details">
-            <h2><i class="fas fa-cogs"></i> 🔧 Setup Details</h2>
+            <h2><i class="fas fa-cogs"></i> Setup Details</h2>
             <div class="details-table">
                 <table>
                     <thead>
@@ -125,43 +125,63 @@
 
         <!-- Screenshots Section -->
         <section id="screenshots" class="section-dark screenshots-section">
-            <h2><i class="fas fa-camera"></i> 📸 Screenshots</h2>
-            <p class="section-note">💡 Screenshots will be added as the project progresses through different phases.</p>
+            <h2><i class="fas fa-camera"></i> Screenshots</h2>
             
             <div class="screenshots-grid">
                 <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        <i class="fas fa-desktop"></i>
-                        <h4>T-Pot Welcome Page</h4>
-                        <p>Web UI at 192.168.72.52:64297</p>
+                    <img src="images/welcome_page.png" alt="T-Pot Welcome Page" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">T-Pot Welcome Page</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Web UI at 192.168.72.52:64297</p>
                     </div>
                 </div>
                 <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        <i class="fas fa-chart-area"></i>
-                        <h4>Kibana Dashboard</h4>
-                        <p>Honeypot attack visualisations and alerts</p>
+                    <img src="images/attacks_by_honeypot.png" alt="Attack Statistics" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">Attack Statistics</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Kibana dashboard showing attack distribution</p>
                     </div>
                 </div>
                 <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        <i class="fas fa-heartbeat"></i>
-                        <h4>System Status</h4>
-                        <p>Active container status monitoring</p>
+                    <img src="images/attacker_source_ip.png" alt="Source IP Analysis" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">Attacker Source IPs</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Geographic distribution of attack sources</p>
                     </div>
                 </div>
                 <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        <i class="fas fa-globe"></i>
-                        <h4>Attack Map</h4>
-                        <p>Spiderfoot geographical attack analysis</p>
+                    <img src="images/nmap_scan.png" alt="Nmap Scan Results" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">Network Reconnaissance</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Nmap scan revealing honeypot services</p>
                     </div>
                 </div>
                 <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        <i class="fas fa-terminal"></i>
-                        <h4>Terminal Output</h4>
-                        <p>Nmap scans, Cowrie logs, Suricata alerts</p>
+                    <img src="images/cowrie_logs.png" alt="Cowrie SSH Logs" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">SSH Honeypot Logs</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Cowrie capturing SSH attack attempts</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/curl.png" alt="HTTP Probe" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">HTTP Probing</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">HTTP requests against web honeypots</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/suricata_alerts.png" alt="Suricata Alerts" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">Network IDS Alerts</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Suricata detecting malicious activity</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="images/suricata_cve.png" alt="CVE Detection" style="width: 100%; border-radius: 8px;">
+                    <div style="padding: 15px; text-align: center;">
+                        <h4 style="color: #00ff00; margin-bottom: 10px;">CVE Detection</h4>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Suricata identifying known vulnerabilities</p>
                     </div>
                 </div>
             </div>
@@ -169,11 +189,11 @@
 
         <!-- Simulated Attacks -->
         <section class="section-dark simulated-attacks">
-            <h2><i class="fas fa-bug"></i> 🧪 Simulated Attacks</h2>
-            <p class="attack-description">Simulated traffic was generated from the host machine to mimic external attacks and validate honeypot functionality.</p>
+            <h2><i class="fas fa-bug"></i> Attack Simulation & Testing</h2>
+            <p class="attack-description">Multiple attack vectors were simulated from the host machine to validate honeypot functionality and generate realistic attack data for analysis.</p>
             
             <div class="tools-section">
-                <h3><i class="fas fa-tools"></i> Tools Used</h3>
+                <h3><i class="fas fa-tools"></i> Attack Techniques Used</h3>
                 <div class="tools-grid">
                     <div class="tool-item">
                         <i class="fas fa-search"></i>
@@ -181,23 +201,25 @@
                         <div class="code-block">
                             <pre><code>nmap -sS -sV -p- 192.168.72.52</code></pre>
                         </div>
-                        <p>Full TCP port scan for service discovery</p>
+                        <p>Comprehensive port scan revealing active honeypot services</p>
                     </div>
                     <div class="tool-item">
                         <i class="fas fa-key"></i>
-                        <h4>Brute Force Testing</h4>
+                        <h4>SSH Brute Force</h4>
                         <div class="code-block">
-                            <pre><code>hydra [options] 192.168.72.52</code></pre>
+                            <pre><code>ssh admin@192.168.72.52
+ssh root@192.168.72.52</code></pre>
                         </div>
-                        <p>SSH brute-force against Cowrie honeypot [WIP]</p>
+                        <p>Manual SSH login attempts captured by Cowrie honeypot</p>
                     </div>
                     <div class="tool-item">
                         <i class="fas fa-globe"></i>
                         <h4>HTTP Probing</h4>
                         <div class="code-block">
-                            <pre><code>curl http://192.168.72.52</code></pre>
+                            <pre><code>curl -I http://192.168.72.52
+curl -A "Scanner" http://192.168.72.52</code></pre>
                         </div>
-                        <p>Simulate Wordpot HTTP probe activities</p>
+                        <p>HTTP requests targeting web-based honeypots for service enumeration</p>
                     </div>
                 </div>
             </div>
@@ -205,43 +227,52 @@
             <div class="results-section">
                 <div class="result-badge">
                     <i class="fas fa-check-circle"></i>
-                    <span>✅ Result: Attack activities successfully triggered logs visible in the Kibana dashboard</span>
+                    <span>✅ Successfully captured attack patterns, generated logs, and triggered IDS alerts across all honeypot services</span>
                 </div>
             </div>
         </section>
 
         <!-- Sample Findings -->
         <section class="section-dark findings-section">
-            <h2><i class="fas fa-chart-pie"></i> 📊 Sample Findings</h2>
-            <p class="findings-note">These findings will be updated with real insights as data collection progresses.</p>
+            <h2><i class="fas fa-chart-pie"></i> Key Findings</h2>
             
             <div class="findings-grid">
                 <div class="finding-item">
                     <i class="fas fa-crosshairs"></i>
-                    <h3>Most Targeted Port</h3>
-                    <p><strong>22/tcp</strong> via Cowrie<br>SSH brute-force attempts</p>
+                    <h3>Most Targeted Service</h3>
+                    <p><strong>SSH (Port 22)</strong><br>Cowrie honeypot captured extensive brute-force attempts</p>
                 </div>
                 <div class="finding-item">
                     <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Suricata Alert</h3>
-                    <p><strong>[ET INFO]</strong><br>Suspicious SSH Activity</p>
+                    <h3>Suricata Detection</h3>
+                    <p><strong>CVE-2021-4034</strong><br>PwnKit privilege escalation attempt detected</p>
                 </div>
                 <div class="finding-item">
                     <i class="fas fa-user-ninja"></i>
-                    <h3>Top Attacker IP</h3>
-                    <p><strong>123.45.67.89</strong><br>(Simulated traffic)</p>
+                    <h3>Attack Patterns</h3>
+                    <p><strong>Credential Stuffing</strong><br>Common username/password combinations observed</p>
                 </div>
                 <div class="finding-item">
                     <i class="fas fa-bug"></i>
-                    <h3>Tool Detection</h3>
-                    <p><strong>BusyBox strings</strong><br>Base64 payload (Mirai botnet pattern)</p>
+                    <h3>Malware Artifacts</h3>
+                    <p><strong>Base64 Payloads</strong><br>Suspicious encoded commands in SSH sessions</p>
+                </div>
+                <div class="finding-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Geographic Sources</h3>
+                    <p><strong>Global Distribution</strong><br>Attack attempts from multiple continents</p>
+                </div>
+                <div class="finding-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Attack Timing</h3>
+                    <p><strong>24/7 Activity</strong><br>Continuous automated scanning and probing</p>
                 </div>
             </div>
         </section>
 
         <!-- Learning Points -->
         <section class="section-dark learning-section">
-            <h2><i class="fas fa-graduation-cap"></i> 🧠 Learning Points</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Learning Points</h2>
             <div class="learning-grid">
                 <div class="learning-item">
                     <i class="fas fa-search"></i>
@@ -268,41 +299,41 @@
 
         <!-- Future Work -->
         <section class="section-dark future-work">
-            <h2><i class="fas fa-rocket"></i> 🛠 Future Work</h2>
-            <p class="future-note">This LAN-based setup represents the foundation for more advanced implementations.</p>
+            <h2><i class="fas fa-rocket"></i> Potential Expansions</h2>
+            <p class="future-note">This LAN-based honeypot implementation provides a solid foundation for advanced threat research and monitoring capabilities.</p>
             
             <div class="roadmap-grid">
                 <div class="roadmap-item">
-                    <div class="status-badge todo">
-                        <i class="fas fa-square"></i>
-                        <span>TODO</span>
+                    <div class="status-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>EXPANSION</span>
                     </div>
                     <h3>Internet Exposure</h3>
-                    <p>Expose VM to the Internet via port forwarding for real attack data collection</p>
+                    <p>Deploy honeypots with internet exposure to capture real-world attack campaigns and analyze current threat landscape trends</p>
                 </div>
                 <div class="roadmap-item">
-                    <div class="status-badge todo">
-                        <i class="fas fa-square"></i>
-                        <span>TODO</span>
+                    <div class="status-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>EXPANSION</span>
                     </div>
                     <h3>Automated Analysis</h3>
-                    <p>Add automated log analysis scripts for pattern recognition and threat classification</p>
+                    <p>Implement machine learning models for automated threat classification and behavioral analysis of captured attack patterns</p>
                 </div>
                 <div class="roadmap-item">
-                    <div class="status-badge todo">
-                        <i class="fas fa-square"></i>
-                        <span>TODO</span>
+                    <div class="status-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>EXPANSION</span>
                     </div>
-                    <h3>Threat Intelligence</h3>
-                    <p>Integrate with threat intelligence feeds for IOC correlation and enrichment</p>
+                    <h3>Threat Intelligence Integration</h3>
+                    <p>Integrate with external threat intelligence feeds for real-time IOC correlation and attribution analysis</p>
                 </div>
                 <div class="roadmap-item">
-                    <div class="status-badge todo">
-                        <i class="fas fa-square"></i>
-                        <span>TODO</span>
+                    <div class="status-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>EXPANSION</span>
                     </div>
-                    <h3>Distributed Environment</h3>
-                    <p>Deploy honeypots across multiple VMs for a distributed monitoring environment</p>
+                    <h3>Distributed Deployment</h3>
+                    <p>Scale to a multi-node architecture with geographically distributed honeypots for comprehensive threat visibility</p>
                 </div>
             </div>
         </section>

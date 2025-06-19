@@ -125,7 +125,7 @@ window.addEventListener('load', () => {
 
     // Initialize Terminal Animation if its container and elements exist
     if (document.querySelector('.typing-text .line')) { // More specific check
-        new TerminalAnimation();
+    new TerminalAnimation();
     }
 
     // Highlight active page in navigation
@@ -143,10 +143,10 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
         if ((!targetPage || targetPage === currentPage || (targetPage === 'index.html' && (currentPage === '' || currentPage === 'index.html'))) && targetId) {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                e.preventDefault();
+        e.preventDefault();
                 targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            behavior: 'smooth'
+        });
                 // Optionally, update hash manually if not already done by browser on same page
                 // window.location.hash = '#' + targetId;
             }

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="dark">
+    <title>iseeyou: Automated OSINT Tool | Adriel Rivera Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <base href="./">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <nav class="top-navbar">
+        <div class="nav-logo">Adriel</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-button">Home</a></li>
+            <li><a href="certifications.html" class="nav-button">Certifications</a></li>
+            <li><a href="competitions.html" class="nav-button">Competitions</a></li>
+            <li><a href="projects.html" class="nav-button">Projects</a></li>
+        </ul>
+        <div class="nav-social-links">
+            <a href="https://github.com/adrielrivera" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/adriel-rivera" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:adrielrivera103@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <main class="main-content project-detail">
+        <!-- Project Header -->
+        <section class="project-header">
+            <div class="project-title">
+                <h1 class="glitch-text">iseeyou: Automated OSINT Tool</h1>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/adrielrivera/iseeyou" target="_blank" class="btn-secondary">
+                    <i class="fab fa-github"></i> View Source
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section-dark project-overview">
+            <h2><i class="fas fa-bullseye"></i> Project Overview</h2>
+            <div class="overview-description">
+                <p><strong>I developed a comprehensive Open Source Intelligence (OSINT) web application that demonstrates my full-stack development skills, cybersecurity knowledge, and modern UI/UX design principles.</strong></p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Core Value Proposition</h3>
+                    <p><strong>Professional OSINT Toolkit:</strong> I built a complete intelligence gathering platform with 4 core modules</p>
+                    <p><strong>Portfolio Demonstration:</strong> I implemented sophisticated mock data to showcase functionality without requiring external API dependencies</p>
+                    <p><strong>Security-First Design:</strong> I designed this with ethical hacking and cybersecurity research methodologies in mind</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup Instructions -->
+        <section class="section-dark setup-instructions">
+            <h2><i class="fas fa-wrench"></i> Setup Instructions</h2>
+            
+            <div class="setup-content">
+                <div class="setup-section">
+                    <h3><i class="fas fa-list-check"></i> Prerequisites</h3>
+                    <ul>
+                        <li>Node.js (v14 or higher)</li>
+                        <li>Python 3.8 or higher</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                
+                <div class="setup-section">
+                    <h3><i class="fab fa-python"></i> Backend Setup</h3>
+                    <p>Navigate to the backend directory:</p>
+                    <div class="code-block">
+                        <pre><code>cd backend</code></pre>
+                    </div>
+                    <p>Create and activate a virtual environment:</p>
+                    <div class="code-block">
+                        <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate</code></pre>
+                    </div>
+                    <p>Install dependencies:</p>
+                    <div class="code-block">
+                        <pre><code>pip install -r requirements.txt</code></pre>
+                    </div>
+                    <p>Start the Flask server:</p>
+                    <div class="code-block">
+                        <pre><code>python app.py</code></pre>
+                    </div>
+                    <p><strong>The API will be available at http://localhost:5000</strong></p>
+                </div>
+                
+                <div class="setup-section">
+                    <h3><i class="fab fa-react"></i> Frontend Setup</h3>
+                    <p>Navigate to the frontend directory:</p>
+                    <div class="code-block">
+                        <pre><code>cd frontend</code></pre>
+                    </div>
+                    <p>Install dependencies:</p>
+                    <div class="code-block">
+                        <pre><code>npm install</code></pre>
+                    </div>
+                    <p>Start the development server:</p>
+                    <div class="code-block">
+                        <pre><code>npm start</code></pre>
+                    </div>
+                    <p><strong>The application will open at http://localhost:3000</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mock Data Implementation -->
+        <section class="section-dark mock-data">
+            <h2><i class="fas fa-database"></i> Mock Data Implementation</h2>
+            
+            <div class="mock-data-content">
+                <div class="mock-data-intro">
+                    <p><strong>Important Note:</strong> This project is designed for demonstration purposes and uses mock data to simulate real OSINT API responses. <strong>No actual API keys are included</strong> - they are left as placeholders for security and demonstration purposes.</p>
+                </div>
+                
+                <div class="mock-sources">
+                    <h3>Mock Data Sources:</h3>
+                    <div class="mock-grid">
+                        <div class="mock-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>Domain WHOIS</h4>
+                            <p>Pre-defined data for common domains (google.com, facebook.com, etc.)</p>
+                        </div>
+                        
+                        <div class="mock-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Breaches</h4>
+                            <p>Simulated breach data with realistic breach information</p>
+                        </div>
+                        
+                        <div class="mock-item">
+                            <i class="fas fa-user"></i>
+                            <h4>Username Searches</h4>
+                            <p>Deterministic results across 30+ social platforms</p>
+                        </div>
+                        
+                        <div class="mock-item">
+                            <i class="fas fa-server"></i>
+                            <h4>IP Intelligence</h4>
+                            <p>Generated geolocation and service data</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="production-implementation">
+                    <h3>Production Implementation:</h3>
+                    <p>To use with real APIs, you would need:</p>
+                    <ul>
+                        <li>Shodan API for IP intelligence</li>
+                        <li>HaveIBeenPwned API for breach data</li>
+                        <li>WhoAPI for enhanced WHOIS information</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section class="section-dark technical-architecture">
+            <h2><i class="fas fa-sitemap"></i> Technical Architecture</h2>
+            
+            <div class="architecture-grid">
+                <div class="arch-section">
+                    <h3><i class="fab fa-react"></i> Frontend (React 18)</h3>
+                    <ul>
+                        <li>I implemented a modern component-based architecture with Material-UI</li>
+                        <li>I designed a professional dark theme with custom styling</li>
+                        <li>I created responsive design supporting mobile, tablet, and desktop</li>
+                        <li>I used React Router for seamless navigation</li>
+                        <li>I integrated Axios for API communication</li>
+                        <li>I developed advanced data visualization and result presentation</li>
+                    </ul>
+                </div>
+                
+                <div class="arch-section">
+                    <h3><i class="fab fa-python"></i> Backend (Python Flask)</h3>
+                    <ul>
+                        <li>I built a RESTful API architecture with modular route design</li>
+                        <li>I created four specialized intelligence modules (Domain, Email, Username, IP)</li>
+                        <li>I developed sophisticated mock data generators that simulate real OSINT services</li>
+                        <li>I implemented CORS support and proper error handling</li>
+                        <li>I structured professional API documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features & Modules -->
+        <section class="section-dark core-features">
+            <h2><i class="fas fa-cogs"></i> Core Features & Modules</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>1. Domain Intelligence (/domain)</h3>
+                    <ul>
+                        <li>I implemented WHOIS data analysis with fallback mechanisms</li>
+                        <li>I developed DNS record enumeration (A, MX, TXT, etc.)</li>
+                        <li>I created HTTP header analysis functionality</li>
+                        <li>I provided mock data for major domains (Google, Facebook, Twitter)</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>2. Email Intelligence (/email)</h3>
+                    <ul>
+                        <li>I built email format validation with MX record checking</li>
+                        <li>I simulated breach data (mimics HaveIBeenPwned API)</li>
+                        <li>I developed domain-associated email discovery</li>
+                        <li>I created professional reporting with confidence scoring</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-user"></i>
+                    <h3>3. Username Research (/username)</h3>
+                    <ul>
+                        <li>I implemented social media presence detection across 30+ platforms</li>
+                        <li>I created Sherlock-style username enumeration simulation</li>
+                        <li>I designed deterministic results for consistent demonstrations</li>
+                        <li>I developed professional confidence scoring and source attribution</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-server"></i>
+                    <h3>4. IP Address Intelligence (/ip)</h3>
+                    <ul>
+                        <li>I integrated geolocation analysis using real APIs</li>
+                        <li>I implemented WHOIS information lookup</li>
+                        <li>I created reverse DNS resolution functionality</li>
+                        <li>I simulated port scanning (mimics Shodan data)</li>
+                        <li>I developed vulnerability assessment reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Demonstrated -->
+        <section class="section-dark tech-stack">
+            <h2><i class="fas fa-layer-group"></i> Technologies Demonstrated</h2>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3><i class="fab fa-react"></i> Frontend Expertise</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <i class="fab fa-react"></i>
+                            <h4>React 18</h4>
+                            <p>Hooks and modern patterns</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-palette"></i>
+                            <h4>Material-UI</h4>
+                            <p>Component library mastery</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <h4>Responsive CSS</h4>
+                            <p>Advanced styling</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Performance</h4>
+                            <p>Optimization techniques</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fab fa-python"></i> Backend Expertise</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <i class="fab fa-python"></i>
+                            <h4>Python Flask</h4>
+                            <p>Framework expertise</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-route"></i>
+                            <h4>RESTful API</h4>
+                            <p>Design principles</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-cubes"></i>
+                            <h4>Modular Code</h4>
+                            <p>Architecture patterns</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Error Handling</h4>
+                            <p>Validation & debugging</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-search"></i> OSINT Knowledge</h3>
+                    <div class="stack-grid">
+                        <div class="stack-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>Domain Analysis</h4>
+                            <p>Investigation methodologies</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Intelligence</h4>
+                            <p>Research techniques</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Social Media</h4>
+                            <p>Enumeration strategies</p>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-server"></i>
+                            <h4>IP Investigation</h4>
+                            <p>Analysis procedures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Impact -->
+        <section class="section-dark project-impact">
+            <h2><i class="fas fa-award"></i> Project Impact</h2>
+            <div class="impact-content">
+                <p>This project allowed me to demonstrate my abilities in <strong>full-stack development</strong>, <strong>cybersecurity knowledge</strong>, <strong>UI/UX design</strong>, and <strong>professional software architecture</strong>. The sophisticated mock data system I created shows my enterprise-level thinking about demo environments and user experience.</p>
+                
+                <div class="impact-highlights">
+                    <div class="impact-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Full-Stack Development</span>
+                    </div>
+                    <div class="impact-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cybersecurity Expertise</span>
+                    </div>
+                    <div class="impact-badge">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>UI/UX Design</span>
+                    </div>
+                    <div class="impact-badge">
+                        <i class="fas fa-building"></i>
+                        <span>Enterprise Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Links -->
+        <section class="section-dark project-links-section">
+            <h2><i class="fas fa-link"></i> Project Resources</h2>
+            <div class="links-grid">
+                <a href="https://github.com/adrielrivera/iseeyou" target="_blank" class="link-card">
+                    <i class="fab fa-github"></i>
+                    <h3>Source Code</h3>
+                    <p>Complete source code and documentation</p>
+                </a>
+                <a href="https://github.com/adrielrivera/iseeyou/blob/main/README.md" target="_blank" class="link-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Documentation</h3>
+                    <p>Setup instructions and technical details</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html> 
