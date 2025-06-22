@@ -3333,3 +3333,191 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* Certifications Page - 2x2 Grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 35rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section-wide Hover Indicator */
+.section-hover-indicator {
+    text-align: center;
+    margin: 2rem auto 3rem auto;
+    padding: 12px 20px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    animation: pulse-indicator 2s infinite;
+    width: fit-content;
+}
+
+.section-hover-indicator i {
+    font-size: 1rem;
+}
+
+/* Responsive Design for Certifications */
+@media (max-width: 992px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 30rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 25rem;
+    }
+    
+    .hover-image-popup {
+        padding: 10px;
+        margin-top: 8px;
+    }
+    
+    .section-hover-indicator {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        margin: 1.5rem auto 2.5rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-grid {
+        gap: 1.2rem;
+        margin-bottom: 20rem;
+    }
+    
+    .hover-image-popup {
+        padding: 8px;
+        margin-top: 6px;
+    }
+    
+    .section-hover-indicator {
+        padding: 8px 14px;
+        font-size: 0.7rem;
+        margin: 1rem auto 2rem auto;
+    }
+    
+    .section-hover-indicator span {
+        display: none;
+    }
+    
+    .section-hover-indicator i {
+        font-size: 0.9rem;
+    }
+}
+
+/* Certification Hover Images - All Cards */
+.google-cert,
+.cisco-cert,
+.cs0-cert,
+.cs1-cert {
+    position: relative;
+    overflow: visible;
+}
+
+/* Hover Indicator Styling */
+.hover-indicator {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 20px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    animation: pulse-indicator 2s infinite;
+}
+
+.hover-indicator i {
+    font-size: 0.9rem;
+}
+
+.hover-indicator span {
+    font-weight: 500;
+}
+
+@keyframes pulse-indicator {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.skill-card:hover .hover-indicator {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.hover-image-popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateY(10px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-top: 10px;
+}
+
+.hover-image-popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.google-cert:hover .hover-image-popup,
+.cisco-cert:hover .hover-image-popup,
+.cs0-cert:hover .hover-image-popup,
+.cs1-cert:hover .hover-image-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.google-cert:hover,
+.cisco-cert:hover,
+.cs0-cert:hover,
+.cs1-cert:hover {
+    z-index: 999;
+}
