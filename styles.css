@@ -3526,353 +3526,127 @@ body {
 .leadership-section,
 .projects-section,
 .skills-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .leadership-section h3,
 .projects-section h3,
 .skills-section h3 {
-    color: #00ff00;
+    color: var(--primary-green);
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
     margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .leadership-section h3 i,
 .projects-section h3 i,
 .skills-section h3 i {
-    color: #00ff00;
-    font-size: 1.2rem;
+    color: var(--primary-green);
+    font-size: 1.3rem;
 }
 
-/* Leadership Grid */
-.leadership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+/* Featured Competition Styles */
+.featured-competition-section {
+    margin-bottom: 4rem;
 }
 
-.leadership-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
+.featured-competition {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.featured-olympiad {
     position: relative;
-    overflow: hidden;
+    max-width: 600px;
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.1), rgba(0, 255, 127, 0.05));
+    border: 2px solid var(--primary-green);
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.3);
 }
 
-.leadership-card::before {
+.featured-olympiad::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00ff00, transparent);
-    transition: left 0.5s ease;
-}
-
-.leadership-card:hover::before {
-    left: 100%;
-}
-
-.leadership-card:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-    transform: translateY(-5px);
-}
-
-.leadership-card.current {
-    border-color: #00ff00;
-    background: rgba(0, 255, 0, 0.05);
-}
-
-.leadership-card.current::after {
-    content: 'CURRENT';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #00ff00;
-    color: #000;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.leadership-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.leadership-header i {
-    font-size: 2rem;
-    color: #00ff00;
-    padding: 0.5rem;
-    background: rgba(0, 255, 0, 0.1);
-    border-radius: 8px;
-}
-
-.leadership-title h4 {
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-.leadership-year {
-    color: #00ff00;
-    font-size: 0.9rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-}
-
-.leadership-category {
-    background: rgba(0, 255, 0, 0.2);
-    color: #00ff00;
-    padding: 4px 12px;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-green), transparent, var(--primary-green));
     border-radius: 15px;
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
-    display: inline-block;
-    margin-bottom: 1rem;
+    z-index: -1;
+    animation: pulseGlow 2s ease-in-out infinite alternate;
 }
 
-.leadership-details p {
-    color: #ccc;
-    margin: 0.5rem 0;
-    line-height: 1.6;
-}
-
-.leadership-details strong {
-    color: #00ff00;
-}
-
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
-}
-
-.project-card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(0, 255, 0, 0.2);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.project-card:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-.project-card.featured {
-    border-color: #00ff00;
-    background: rgba(0, 255, 0, 0.03);
-}
-
-.project-card.featured::before {
-    content: 'FEATURED';
+.olympiad-badge {
     position: absolute;
-    top: -8px;
-    left: 15px;
-    background: #00ff00;
-    color: #000;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.project-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.project-header i {
-    color: #00ff00;
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-}
-
-.project-header h4 {
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.project-year {
-    color: #00ff00;
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
-    background: rgba(0, 255, 0, 0.1);
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-
-.project-badge {
-    background: rgba(255, 165, 0, 0.2);
-    color: #ffa500;
-    padding: 4px 10px;
-    border-radius: 12px;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-green);
+    color: var(--bg-dark);
+    padding: 5px 12px;
+    border-radius: 20px;
     font-size: 0.75rem;
+    font-weight: 700;
     font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    display: inline-block;
-    margin-bottom: 0.8rem;
+    animation: pulse-indicator 2s infinite;
 }
 
-.project-content p {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.project-role {
-    color: #00ff00;
-    font-size: 0.9rem;
-    font-family: 'JetBrains Mono', monospace;
+.competition-details {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
-}
-
-.project-impact {
-    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 255, 127, 0.3);
 }
 
-.project-impact span {
-    color: #00ff00;
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
+.competition-details span {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
-}
-
-/* Skills Showcase */
-.skills-showcase {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-item {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 255, 0, 0.2);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-    border-color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-.skill-item i {
-    font-size: 2.5rem;
-    color: #00ff00;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.skill-item h4 {
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.skill-item p {
-    color: #ccc;
+    gap: 0.5rem;
+    color: var(--primary-green);
     font-size: 0.9rem;
-    line-height: 1.5;
+    font-family: 'JetBrains Mono', monospace;
 }
 
-/* Responsive Design for Leadership */
-@media (max-width: 992px) {
-    .leadership-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    
-    .skills-showcase {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+.competition-details i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
 }
 
+.other-competitions-section {
+    margin-top: 3rem;
+}
+
+/* Responsive adjustments for featured competition */
 @media (max-width: 768px) {
-    .leadership-section h3,
-    .projects-section h3,
-    .skills-section h3 {
-        font-size: 1.3rem;
+    .featured-olympiad {
+        max-width: 100%;
+        margin: 0 1rem;
     }
     
-    .leadership-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .project-impact {
+    .competition-details {
         flex-direction: column;
         gap: 0.5rem;
     }
     
-    .skills-showcase {
-        grid-template-columns: 1fr;
+    .competition-details span {
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    .leadership-card,
-    .project-card,
-    .skill-item {
-        padding: 1rem;
+    .featured-competition-section {
+        margin-bottom: 2rem;
     }
     
-    .leadership-section,
-    .projects-section,
-    .skills-section {
-        margin-bottom: 3rem;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .olympiad-badge {
+        top: 10px;
+        right: 10px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
     }
 }
