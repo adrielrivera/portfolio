@@ -3548,6 +3548,275 @@ body {
     font-size: 1.3rem;
 }
 
+/* Leadership Grid */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.leadership-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.leadership-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.4);
+    transform: translateY(-5px);
+}
+
+.leadership-card.current {
+    border-color: var(--primary-green);
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.1), rgba(0, 255, 127, 0.05));
+}
+
+.leadership-card.current::before {
+    content: 'CURRENT';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-green);
+    color: var(--bg-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.leadership-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.leadership-header i {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+}
+
+.leadership-title h4 {
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.leadership-year {
+    color: var(--primary-green);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.leadership-details {
+    margin-top: 1rem;
+}
+
+.leadership-category {
+    background: rgba(0, 255, 127, 0.2);
+    color: var(--primary-green);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.leadership-details p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.leadership-details strong {
+    color: var(--primary-green);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.4);
+    transform: translateY(-5px);
+}
+
+.project-card.featured {
+    border-color: var(--primary-green);
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.15), rgba(0, 255, 127, 0.05));
+    box-shadow: 0 0 30px rgba(0, 255, 127, 0.3);
+}
+
+.project-card.featured::before {
+    content: 'FEATURED';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-green);
+    color: var(--bg-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-header i {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+}
+
+.project-header h4 {
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-year {
+    color: var(--primary-green);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-content {
+    margin-top: 1rem;
+}
+
+.project-badge {
+    background: rgba(0, 255, 127, 0.2);
+    color: var(--primary-green);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.project-content p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-content strong {
+    color: var(--primary-green);
+}
+
+.project-impact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-impact span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.project-impact i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+.project-role {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-green);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 1rem;
+}
+
+.project-role i {
+    color: var(--primary-green);
+    font-size: 0.8rem;
+}
+
+/* Skills Showcase */
+.skills-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 20px rgba(0, 255, 127, 0.4);
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skill-item h4 {
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
 /* Featured Competition Styles */
 .featured-competition-section {
     margin-bottom: 4rem;
@@ -3648,5 +3917,70 @@ body {
         right: 10px;
         padding: 4px 8px;
         font-size: 0.7rem;
+    }
+}
+
+/* Responsive Design for Leadership */
+@media (max-width: 992px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .skills-showcase {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .leadership-section,
+    .projects-section,
+    .skills-section {
+        margin-bottom: 2rem;
+    }
+    
+    .leadership-card,
+    .project-card,
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .leadership-header,
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .project-impact {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .leadership-section h3,
+    .projects-section h3,
+    .skills-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .leadership-card.current::before,
+    .project-card.featured::before {
+        top: 5px;
+        right: 5px;
+        font-size: 0.6rem;
+        padding: 3px 6px;
     }
 }
