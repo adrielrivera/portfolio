@@ -3863,6 +3863,35 @@ body {
     animation: pulse-indicator 2s infinite;
 }
 
+.olympiad-badge.gold-winner {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    animation: goldGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+        transform: scale(1.05);
+    }
+}
+
+.cert-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cert-link:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
 .competition-details {
     display: flex;
     flex-wrap: wrap;
